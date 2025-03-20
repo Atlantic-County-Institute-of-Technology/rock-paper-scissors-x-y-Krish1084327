@@ -16,8 +16,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     top: 250px;
     left: 350px;
     background-color: beige;
@@ -29,8 +29,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     top: 250px;
     left: 540px;
     background-color: rgb(0, 255, 255);
@@ -42,8 +42,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     top: 250px;
     left: 720px;
     background-color: darkolivegreen;
@@ -55,8 +55,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     top: 250px;
     left: 910px;
     background-color: rgb(201, 28, 28);
@@ -68,8 +68,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     top: 250px;
     left: 1100px;
 }
@@ -83,7 +83,6 @@ width: 40px;
 height: 50px;
 left: 550px;
 top: 500px;
-border-color: black;
 }
 /*Computer Player*/
 .CPU {
@@ -100,4 +99,25 @@ border-color: black;
 
 #text {
     left: 100px;
+}
+
+.score{
+    display: flex;
+    width: 30vw;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 70px;
+    z-index: 1;
+}
+.p-count{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    left: 450px;
+}
+
+.c-count{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
