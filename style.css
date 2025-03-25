@@ -9,8 +9,6 @@ body {
     justify-content: center;
     left: 150px;
     top: 120px;
-    
- 
 }
 
 /*The Office Items*/
@@ -100,6 +98,7 @@ body {
     position: absolute;
     top: 70px;
     z-index: -1;
+    left: 450px;
 }
 /*Player Score*/
 .p-count{
