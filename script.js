@@ -1,15 +1,56 @@
+    //event listeners and 
+    
     const text = document.getElementById ("text");
-    const rockBtn = document.getElementById ("1");
-    const paperBtn = document.getElementById ("2");
-    const scissorsBtn = document.getElementById ("3");
-    const pencilBtn = document.getElementById ("4");
-    const telephoneBtn = document.getElementById ("5");
+    const rockBtn = document.getElementById ("rock");
+    const paperBtn = document.getElementById ("paper");
+    const scissorsBtn = document.getElementById ("scissors");
+    const pencilBtn = document.getElementById ("pencil");
+    const telephoneBtn = document.getElementById ("telephone");
     const containerBtn = document.getElementById ("container");
     const playerScoreBoard = document.querySelector('.p-count');
-    const playerOptions = [rockBtn, paperBtn, scissorsBtn, pencilBtn, telephoneBtn];
-    const computerOptions = ['1', '2', '3', '4', '5']
+    const playerOptions = ["rock", "paper", "scissors", "pencil", "telephone"];
+    const computerOptions = ["rock", "paper", "scissors", "pencil", "telephone"]
     const computerScoreBoard = document.querySelector('.c-count');
-const result = document.querySelector('.result');
+    const result = document.querySelector('.result');
+rockBtn.addEventListener("click", () => {
+    let tempvar = cpuChoice()
+    console.log(tempvar)
+    winner(1, tempvar)
+
+})
+
+paperBtn.addEventListener("click", () => {
+    let tempvar = cpuChoice()
+    console.log(tempvar)
+    winner(2, tempvar)
+
+})
+
+scissorsBtn.addEventListener("click", () => {
+    let tempvar = cpuChoice()
+    console.log(tempvar)
+    winner(4, tempvar)
+
+})
+
+pencilBtn.addEventListener("click", () => {
+    let tempvar = cpuChoice()
+    console.log(tempvar)
+    winner(3, tempvar)
+
+})
+
+telephoneBtn.addEventListener("click", () => {
+    let tempvar = cpuChoice()
+    console.log(tempvar)
+    winner(5, tempvar)
+
+})
+
+const cpuChoice = () => {
+    return Math.floor(Math.random() * 5) + 1;//TODO Choose a random number between 1 and 5
+    
+}
 
 const game = () => {
     let playerScore = 0;
@@ -21,13 +62,11 @@ const winner = (player, computer) => {
     const result = document.querySelector('.result');
     const playerScoreBoard = document.querySelector('.p-count');
     const computerScoreBoard = document.querySelector('.c-count');
-    player = player.toLowerCase();
-    computer = computer.toLowerCase();
     if (player === computer) {
         result.textContent = 'Tie'
     }
-    else if (player == 'rock') {
-        if (computer == 'paper') {
+    else if (player == 1) {
+        if (computer == 3) {
             result.textContent = 'Computer Won';
             computerScore++;
             computerScoreBoard.textContent = computerScore;
@@ -38,8 +77,8 @@ const winner = (player, computer) => {
             playerScoreBoard.textContent = playerScore;
         }
     }
-    else if (player == 'scissors') {
-        if (computer == 'rock') {
+    else if (player == 2) {
+        if (computer == 3) {
             result.textContent = 'Computer Won';
             computerScore++;
             computerScoreBoard.textContent = computerScore;
@@ -49,8 +88,8 @@ const winner = (player, computer) => {
             playerScoreBoard.textContent = playerScore;
         }
     }
-    else if (player == 'paper') {
-        if (computer == 'scissors') {
+    else if (player == 2) {
+        if (computer == 1) {
             result.textContent = 'Computer Won';
             computerScore++;
             computerScoreBoard.textContent = computerScore;
@@ -60,9 +99,43 @@ const winner = (player, computer) => {
             playerScoreBoard.textContent = playerScore;
         }
     }
+    else if (player == 5) {
+        if (computer == 3) {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 5) {
+        if (computer == 4) {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 2) {
+        if (computer == 5) {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+
 }
 
-// Function to run when game is over
+// Function to run when game is over//
 const gameOver = (playerOptions, movesLeft) => {
 
     const chooseMove = document.querySelector('.move');
@@ -100,10 +173,10 @@ const gameOver = (playerOptions, movesLeft) => {
 }
 
 
-// Calling playGame function inside game
-playGame();
+// // Calling playGame function inside game
+// playGame();
 
 
 
-// Calling the game function
-game();
+// // Calling the game function
+// game();
