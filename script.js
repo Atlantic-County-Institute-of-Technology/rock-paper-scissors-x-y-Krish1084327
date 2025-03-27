@@ -1,4 +1,4 @@
-    //event listeners and 
+    //event listeners and constants//
     
     const text = document.getElementById ("text");
     const rockBtn = document.getElementById ("rock");
@@ -6,13 +6,16 @@
     const scissorsBtn = document.getElementById ("scissors");
     const pencilBtn = document.getElementById ("pencil");
     const telephoneBtn = document.getElementById ("telephone");
-    const containerBtn = document.getElementById ("container");
+    const container = document.getElementById ("container");
     const playerScoreBoard = document.querySelector('.p-count');
     const playerOptions = ["rock", "paper", "scissors", "pencil", "telephone"];
     const computerOptions = ["rock", "paper", "scissors", "pencil", "telephone"]
     const computerScoreBoard = document.querySelector('.c-count');
     const result = document.querySelector('.result');
-rockBtn.addEventListener("click", () => {
+    let playerScore = 0;
+    let computerScore = 0;
+    let moves = 0;
+    rockBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
     winner(1, tempvar)
@@ -52,11 +55,7 @@ const cpuChoice = () => {
     
 }
 
-const game = () => {
-    let playerScore = 0;
-    let computerScore = 0;
-    let moves = 0;
-}
+
     
 const winner = (player, computer) => {
     const result = document.querySelector('.result');
@@ -65,76 +64,75 @@ const winner = (player, computer) => {
     if (player === computer) {
         result.textContent = 'Tie'
     }
-    else if (player == 1) {
-        if (computer == 3) {
-            result.textContent = 'Computer Won';
-            computerScore++;
-            computerScoreBoard.textContent = computerScore;
+    
+    // if (player == 2 && computer == 3 || 5){
+    //     result.textContent = "Computer Won"
+    //     computerScore++;
+    //     computerScoreBoard.textContent = computerScore;
+    // }
+    //     else {
+    //         result.textContent = 'Player Won';
+    //         playerScore++;
+    //         playerScoreBoard.textContent = playerScore;    
+    //     }
+    
+       else if (player == 1 && computer == 3 || computer == 5){
+            playerwinner()
+        }
 
-        } else {
-            result.textContent = 'Player Won'
-            playerScore++;
-            playerScoreBoard.textContent = playerScore;
+        else if (player == 2 && computer == 1 || computer == 5){
+            playerwinner()
         }
-    }
-    else if (player == 2) {
-        if (computer == 3) {
-            result.textContent = 'Computer Won';
-            computerScore++;
-            computerScoreBoard.textContent = computerScore;
-        } else {
-            result.textContent = 'Player Won';
-            playerScore++;
-            playerScoreBoard.textContent = playerScore;
-        }
-    }
-    else if (player == 2) {
-        if (computer == 1) {
-            result.textContent = 'Computer Won';
-            computerScore++;
-            computerScoreBoard.textContent = computerScore;
-        } else {
-            result.textContent = 'Player Won';
-            playerScore++;
-            playerScoreBoard.textContent = playerScore;
-        }
-    }
-    else if (player == 5) {
-        if (computer == 3) {
-            result.textContent = 'Computer Won';
-            computerScore++;
-            computerScoreBoard.textContent = computerScore;
-        } else {
-            result.textContent = 'Player Won';
-            playerScore++;
-            playerScoreBoard.textContent = playerScore;
-        }
-    }
-    else if (player == 5) {
-        if (computer == 4) {
-            result.textContent = 'Computer Won';
-            computerScore++;
-            computerScoreBoard.textContent = computerScore;
-        } else {
-            result.textContent = 'Player Won';
-            playerScore++;
-            playerScoreBoard.textContent = playerScore;
-        }
-    }
-    else if (player == 2) {
-        if (computer == 5) {
-            result.textContent = 'Computer Won';
-            computerScore++;
-            computerScoreBoard.textContent = computerScore;
-        } else {
-            result.textContent = 'Player Won';
-            playerScore++;
-            playerScoreBoard.textContent = playerScore;
-        }
-    }
 
-}
+        else {
+               computerwinner()
+        }
+    
+        function playerwinner () {
+             result.textContent = "Player Won"
+            playerScore++;
+            playerScoreBoard.textContent = playerScore
+        }
 
+        function computerwinner () {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore; 
+        }
+
+            // if (player == 3 && computer == 1 || 4){
+            //     result.textContent = "Computer Won"
+            //     computerScore++;
+            //     computerScoreBoard.textContent = computerScore;
+            // }
+            //     else {
+            //     result.textContent = 'Player Won';
+            //     playerScore++;
+            //     playerScoreBoard.textContent = playerScore;    
+            //     }
+
+            //     if (player == 4 && computer == 1 || 5){
+            //         result.textContent = "Computer Won"
+            //         computerScore++;
+            //         computerScoreBoard.textContent = computerScore;
+            //     }
+            //         else {
+            //             result.textContent = 'Player Won';
+            //             playerScore++;
+            //             playerScoreBoard.textContent = playerScore;    
+            //         }
+
+            //         if (player == 2 && computer == 3 || 5){
+            //             result.textContent = "Computer Won"
+            //             computerScore++;
+            //             computerScoreBoard.textContent = computerScore;
+            //         }
+            //             else {
+            //                 result.textContent = 'Player Won';
+            //                 playerScore++;
+            //                 playerScoreBoard.textContent = playerScore;    
+            //             }
+            }
 // Function to run when game is over//
 const gameOver = (playerOptions, movesLeft) => {
 
