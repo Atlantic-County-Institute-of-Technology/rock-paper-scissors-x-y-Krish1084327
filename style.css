@@ -60,6 +60,7 @@ body {
     z-index: 2;
 }
 /*The Two Extra Items*/
+/*The Pencil*/
 #pencil {
     border-radius: 50%;
     position: absolute;
@@ -74,7 +75,7 @@ body {
     box-shadow: 0px 5px 10px 5px black;
     z-index: 2;
 }
-
+/*The Telephone*/
 #telephone {
     border-radius: 50%;
     position: absolute;
@@ -90,7 +91,7 @@ body {
 }
 
 #text {
-    left: 100px;
+    text-align: center;
 }
 
 .score{
@@ -107,7 +108,7 @@ body {
     text-align: center;
     font-size: 1.5rem;
     margin-top: 1rem;
-    left: 450px;
+    left: 550px;
     z-index: 2;
 }
 /*Computer Score*/

@@ -15,20 +15,22 @@
     let playerScore = 0;
     let computerScore = 0;
     let moves = 0;
+   
+   //Rock//
     rockBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
     winner(1, tempvar)
 
 })
-
+//Paper//
 paperBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
     winner(2, tempvar)
 
 })
-
+//Scissors//
 scissorsBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
@@ -36,6 +38,7 @@ scissorsBtn.addEventListener("click", () => {
 
 })
 
+//Pencil//
 pencilBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
@@ -43,6 +46,7 @@ pencilBtn.addEventListener("click", () => {
 
 })
 
+//Telephone//
 telephoneBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
@@ -51,7 +55,7 @@ telephoneBtn.addEventListener("click", () => {
 })
 
 const cpuChoice = () => {
-    return Math.floor(Math.random() * 5) + 1;//TODO Choose a random number between 1 and 5
+    return Math.floor(Math.random() * 5) + 1;//TODO Choose a random number between 1 and 5//
     
 }
 
@@ -75,7 +79,7 @@ const winner = (player, computer) => {
     //         playerScore++;
     //         playerScoreBoard.textContent = playerScore;    
     //     }
-    
+    //What the buttons can beat and what they lose to//
        else if (player == 1 && computer == 3 || computer == 5){
             playerwinner()
         }
@@ -84,16 +88,28 @@ const winner = (player, computer) => {
             playerwinner()
         }
 
+        else if (player == 3 && computer == 2 || computer == 4){
+            playerwinner()
+        }
+
+        else if (player == 4 && computer == 3 || computer == 2){
+            playerwinner()
+        }
+
+        else if (player == 5 && computer == 1 || computer == 4){
+            playerwinner()
+        }
+
         else {
                computerwinner()
         }
-    
+    //Player Wins/Computer Loses//
         function playerwinner () {
              result.textContent = "Player Won"
             playerScore++;
             playerScoreBoard.textContent = playerScore
         }
-
+    //Computer Wins/Computer Loses//
         function computerwinner () {
             result.textContent = 'Computer Won';
             computerScore++;
@@ -133,43 +149,6 @@ const winner = (player, computer) => {
             //                 playerScoreBoard.textContent = playerScore;    
             //             }
             }
-// Function to run when game is over//
-const gameOver = (playerOptions, movesLeft) => {
-
-    const chooseMove = document.querySelector('.move');
-    const result = document.querySelector('.result');
-    const reloadBtn = document.querySelector('.reload');
-
-    playerOptions.forEach(option => {
-        option.style.display = 'none';
-    })
-
-
-    chooseMove.innerText = 'Game Over!!'
-    movesLeft.style.display = 'none';
-
-    if (playerScore > computerScore) {
-        result.style.fontSize = '2rem';
-        result.innerText = 'You Won The Game'
-        result.style.color = '#308D46';
-    }
-    else if (playerScore < computerScore) {
-        result.style.fontSize = '2rem';
-        result.innerText = 'You Lost The Game';
-        result.style.color = 'red';
-    }
-    else {
-        result.style.fontSize = '2rem';
-        result.innerText = 'Tie';
-        result.style.color = 'grey'
-    }
-    reloadBtn.innerText = 'Restart';
-    reloadBtn.style.display = 'flex'
-    reloadBtn.addEventListener('click', () => {
-        window.location.reload();
-    })
-}
-
 
 // // Calling playGame function inside game
 // playGame();
