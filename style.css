@@ -90,6 +90,19 @@ body {
     z-index: 2;
 }
 
+#restart {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 100px;
+    box-shadow: 0px 5px 10px 5px black;
+    z-index: 2;
+}
+
 #text {
     text-align: center;
 }

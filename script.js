@@ -6,6 +6,7 @@
     const scissorsBtn = document.getElementById ("scissors");
     const pencilBtn = document.getElementById ("pencil");
     const telephoneBtn = document.getElementById ("telephone");
+    const restartBtn = document.getElementById ("restart");
     const container = document.getElementById ("container");
     const playerScoreBoard = document.querySelector('.p-count');
     const playerOptions = ["rock", "paper", "scissors", "pencil", "telephone"];
@@ -116,6 +117,18 @@ const winner = (player, computer) => {
             computerScoreBoard.textContent = computerScore; 
         }
 
+        //function to reset the UI and all associated values
+function restart(){
+    //resets the score values to zero
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreBoard.innerHTML = 0;
+    computerScoreBoard.innerHTML = 0;
+    console.log (playerScore)
+}
+restartBtn.addEventListener("click", Reset)
+}
+
             // if (player == 3 && computer == 1 || 4){
             //     result.textContent = "Computer Won"
             //     computerScore++;
@@ -148,7 +161,7 @@ const winner = (player, computer) => {
             //                 playerScore++;
             //                 playerScoreBoard.textContent = playerScore;    
             //             }
-            }
+            
 
 // // Calling playGame function inside game
 // playGame();
