@@ -118,15 +118,7 @@ const winner = (player, computer) => {
         }
 
         //function to reset the UI and all associated values
-function restart(){
-    //resets the score values to zero
-    playerScore = 0;
-    computerScore = 0;
-    playerScoreBoard.innerHTML = 0;
-    computerScoreBoard.innerHTML = 0;
-    console.log (playerScore)
-}
-restartBtn.addEventListener("click", Reset)
+restartBtn.addEventListener("click", Reset);
 }
 
             // if (player == 3 && computer == 1 || 4){
