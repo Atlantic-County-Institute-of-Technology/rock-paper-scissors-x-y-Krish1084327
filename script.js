@@ -57,10 +57,11 @@ telephoneBtn.addEventListener("click", () => {
 
 const cpuChoice = () => {
     return Math.floor(Math.random() * 5) + 1;//TODO Choose a random number between 1 and 5//
-    
 }
 
-
+const playerChoice = () => {
+    return Math.floor(Math.random() * 5) + 1;//TODO Choose a random number between 1 and 5//
+}
     
 const winner = (player, computer) => {
     const result = document.querySelector('.result');
@@ -69,6 +70,8 @@ const winner = (player, computer) => {
     if (player === computer) {
         result.textContent = 'Tie'
     }
+
+    
     
     // if (player == 2 && computer == 3 || 5){
     //     result.textContent = "Computer Won"
@@ -80,7 +83,7 @@ const winner = (player, computer) => {
     //         playerScore++;
     //         playerScoreBoard.textContent = playerScore;    
     //     }
-    //What the buttons can beat and what they lose to//
+    //What the buttons can beat and what they lose to
        else if (player == 1 && computer == 3 || computer == 5){
             playerwinner()
         }
@@ -104,22 +107,27 @@ const winner = (player, computer) => {
         else {
                computerwinner()
         }
-    //Player Wins/Computer Loses//
+    //Player Wins/Computer Loses
         function playerwinner () {
              result.textContent = "Player Won"
             playerScore++;
-            playerScoreBoard.textContent = playerScore
+            playerScoreBoard.textContent = playerScore;
         }
-    //Computer Wins/Computer Loses//
+    //Computer Wins/Computer Loses
         function computerwinner () {
             result.textContent = 'Computer Won';
             computerScore++;
             computerScoreBoard.textContent = computerScore; 
         }
 
+
         //function to reset the UI and all associated values
-restartBtn.addEventListener("click", Reset);
+    restartBtn.addEventListener("click", Reset);
 }
+
+    updateUI(player, computer, winner);
+
+
 
             // if (player == 3 && computer == 1 || 4){
             //     result.textContent = "Computer Won"

@@ -9,7 +9,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 150px;
+    left: 170px;
     top: 120px;
 }
 
@@ -105,6 +105,7 @@ body {
 
 #text {
     text-align: center;
+    left: 100px;
 }
 
 .score{
