@@ -1,4 +1,4 @@
-    //event listeners and constants//
+    //event listeners and constants
     
     const text = document.getElementById ("text");
     const rockBtn = document.getElementById ("rock");
@@ -17,21 +17,21 @@
     let computerScore = 0;
     let moves = 0;
    
-   //Rock//
+   //Rock
     rockBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
     winner(1, tempvar)
 
 })
-//Paper//
+//Paper
 paperBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
     winner(2, tempvar)
 
 })
-//Scissors//
+//Scissors
 scissorsBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
@@ -39,7 +39,7 @@ scissorsBtn.addEventListener("click", () => {
 
 })
 
-//Pencil//
+//Pencil
 pencilBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
@@ -47,7 +47,7 @@ pencilBtn.addEventListener("click", () => {
 
 })
 
-//Telephone//
+//Telephone
 telephoneBtn.addEventListener("click", () => {
     let tempvar = cpuChoice()
     console.log(tempvar)
@@ -63,6 +63,7 @@ const playerChoice = () => {
     return Math.floor(Math.random() * 5) + 1;//TODO Choose a random number between 1 and 5//
 }
     
+    //results for when player/computer wins or a tie
 const winner = (player, computer) => {
     const result = document.querySelector('.result');
     const playerScoreBoard = document.querySelector('.p-count');
